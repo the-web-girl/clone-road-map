@@ -107,7 +107,79 @@
 </head>
 
 <body>
+    <!--
+        ╔══════════════════════════════════════════════════════════════╗
+        ║   STRUCTURE DU BODY                                         ║
+        ║                                                             ║
+        ║   1. Lien d'évitement (skip link)                           ║
+        ║   2. <header> Navbar                                        ║
+        ║   3. <main>   Contenu principal                             ║
+        ║      ├─ .pg-header    Titre de la page                      ║
+        ║      ├─ .section      Cours Obligatoires (18 cartes)          ║
+        ║      └─ .section      Cours Optionnels (11 cartes)         ║
+        ║   4. <footer>                                               ║
+        ║   5. #modal   Modale (cachée par défaut)                    ║
+        ║   6. <script> JavaScript                                    ║
+        ╚══════════════════════════════════════════════════════════════╝
+
+        RÔLES ARIA sur les balises de structure :
+            → <header> principal de la page
+        → <footer> principal de la page
+        Ces rôles créent des "landmarks" (repères) que les
+        lecteurs d'écran utilisent pour naviguer rapidement.
+    -->
     
+    <a href="#main" class="skip">Aller au contenu principal</a>
+    <!--
+    LIEN D'ÉVITEMENT — WCAG 2.4.1 / RGAA 12.7
+    Premier élément focusable de la page (Tab depuis la barre d'adresse).
+    Invisible jusqu'au focus clavier (.skip { top: -100px }).
+    Quand il reçoit le focus : remonte en haut (.skip:focus { top: 0 }).
+    Cible href="#main" → l'élément <main id="main">.
+    Permet de sauter toute la navbar sans faire Tab sur chaque lien.
+    -->
+
+    <!-- ══════════════════════════════════════════════════════════
+        NAVBAR — <header>
+        : landmark ARIA pour le header principal.
+        Il ne doit y en avoir qu'un par page.
+     ══════════════════════════════════════════════════════════ -->
+    <header class="nav">
+        <!-- Logo et lien vers l'accueil -->
+        <div class="nav-logo">
+            <a href="#" aria-label="Deviens développeur web - accueil">
+            <!--
+                aria-label sur le <a> :
+                Le lien contient une image SVG et du texte.
+                aria-label remplace le contenu pour les lecteurs d'écran.
+                Sans ça, le lecteur lirait "triangle vert École du Web".
+                Avec ça, il lit "École du Web, Retour à l'accueil".
+            -->
+
+                <svg aria-hidden="true" focusable="false" width="26" height="26" viewBox="0 0 100 100">
+                    <polygon points="50,5 95,95 5,95" fill="#22c55e"/>
+                    <polygon points="50,25 80,80 20,80" fill="#1a1a2e"/>
+                </svg>
+                <!--
+                    SVG inline — Logo triangle :
+                    aria-hidden="true" → masqué des lecteurs d'écran (décoratif).
+                    focusable="false"  → non focusable dans IE/Edge anciens.
+                    Le texte "École du Web" à côté fournit l'information.
+                -->
+
+                <span>Deviens développeur web</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
 </body>
 
 </html>
