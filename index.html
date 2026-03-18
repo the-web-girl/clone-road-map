@@ -1,55 +1,108 @@
 <!DOCTYPE html>
-<!--
-  ╔══════════════════════════════════════════════════════════════╗
-  ║        FEUILLE DE ROUTE FRONT-END — Deviens développeur web  ║
-  ║  Fichier unique HTML/CSS/JS — aucune dépendance externe     ║
-  ║  Accessible WCAG 2.1 AA / RGAA 4.1                          ║
-  ╠══════════════════════════════════════════════════════════════╣
-  ║  STRUCTURE DU FICHIER :                                      ║
-  ║  1. <html>        → attributs de thème et de police         ║
-  ║  2. <head>        → méta, police Google, styles inline      ║
-  ║     └─ <style>                                              ║
-  ║         ├─ Reset                                            ║
-  ║         ├─ Variables CSS (thème clair)                      ║
-  ║         ├─ Thème sombre  [data-theme="dark"]                ║
-  ║         ├─ Police dyslexique [data-font="dyslexic"]         ║
-  ║         ├─ Base (body, focus, skip-link)                    ║
-  ║         ├─ Navbar                                           ║
-  ║         ├─ Page (container, titre, sous-titre)              ║
-  ║         ├─ Sections (en-têtes, légende)                     ║
-  ║         ├─ Grille et Cartes                                 ║
-  ║         ├─ Modale                                           ║
-  ║         ├─ Animations (@keyframes)                          ║
-  ║         ├─ Footer                                           ║
-  ║         └─ Responsive (media queries)                       ║
-  ║  3. <body>                                                  ║
-  ║     ├─ Skip link (accessibilité clavier)                    ║
-  ║     ├─ <header> Navbar                                      ║
-  ║     ├─ <main>   Contenu (cartes Obligatoires + Optionnels)   ║
-  ║     ├─ <footer>                                             ║
-  ║     ├─ Modale (#modal)                                      ║
-  ║     └─ <script> JS inline                                   ║
-  ╚══════════════════════════════════════════════════════════════╝
--->
+    <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║        FEUILLE DE ROUTE FRONT-END — Deviens développeur web  ║
+    ║  Fichier unique HTML/CSS/JS — aucune dépendance externe     ║
+    ║  Accessible WCAG 2.1 AA / RGAA 4.1                          ║
+    ╠══════════════════════════════════════════════════════════════╣
+    ║  STRUCTURE DU FICHIER :                                      ║
+    ║  1. <html>        → attributs de thème et de police         ║
+    ║  2. <head>        → méta, police Google, styles inline      ║
+    ║     └─ <style>                                              ║
+    ║         ├─ Reset                                            ║
+    ║         ├─ Variables CSS (thème clair)                      ║
+    ║         ├─ Thème sombre  [data-theme="dark"]                ║
+    ║         ├─ Police dyslexique [data-font="dyslexic"]         ║
+    ║         ├─ Base (body, focus, skip-link)                    ║
+    ║         ├─ Navbar                                           ║
+    ║         ├─ Page (container, titre, sous-titre)              ║
+    ║         ├─ Sections (en-têtes, légende)                     ║
+    ║         ├─ Grille et Cartes                                 ║
+    ║         ├─ Modale                                           ║
+    ║         ├─ Animations (@keyframes)                          ║
+    ║         ├─ Footer                                           ║
+    ║         └─ Responsive (media queries)                       ║
+    ║  3. <body>                                                  ║
+    ║     ├─ Skip link (accessibilité clavier)                    ║
+    ║     ├─ <header> Navbar                                      ║
+    ║     ├─ <main>   Contenu (cartes Obligatoires + Optionnels)   ║
+    ║     ├─ <footer>                                             ║
+    ║     ├─ Modale (#modal)                                      ║
+    ║     └─ <script> JS inline                                   ║
+    ╚══════════════════════════════════════════════════════════════╝
+    -->
 
-<!--
-  <html lang="fr"> :
-    Obligatoire pour l'accessibilité (WCAG 3.1.1 / RGAA 8.3).
-    Les lecteurs d'écran utilisent cette valeur pour choisir
-    la bonne voix de synthèse.
-
-  data-theme="light" :
-    Attribut personnalisé (data-*) sur la balise racine.
-    Le CSS cible [data-theme="dark"] pour appliquer le thème sombre.
-    Le JS le lit et le modifie au clic du bouton 🌙.
-
-  data-font="normal" :
-    Même principe pour la police dyslexique.
-    Le CSS cible [data-font="dyslexic"] pour changer la police.
--->
 <html lang="fr" data-theme="light" data-font="normal">
+    <!--
+    <html lang="fr"> :
+        Obligatoire pour l'accessibilité (WCAG 3.1.1 / RGAA 8.3).
+        Les lecteurs d'écran utilisent cette valeur pour choisir
+        la bonne voix de synthèse.
+
+    data-theme="light" :
+        Attribut personnalisé (data-*) sur la balise racine.
+        Le CSS cible [data-theme="dark"] pour appliquer le thème sombre.
+        Le JS le lit et le modifie au clic du bouton 🌙.
+
+    data-font="normal" :
+        Même principe pour la police dyslexique.
+        Le CSS cible [data-font="dyslexic"] pour changer la police.
+    -->
 
 <head>
+
+    <!-- ══════════════════════════════════════════════════════════
+       MÉTA-DONNÉES
+       Ces balises sont dans le <head> : elles donnent des
+       informations AU NAVIGATEUR, pas à l'utilisateur.
+       ══════════════════════════════════════════════════════════ -->
+
+    <meta charset="UTF-8">
+    <!--
+        charset="UTF-8" :
+        Encodage des caractères. UTF-8 supporte tous les caractères :
+        accents français (é à ù), emojis, symboles (€ © …).
+        TOUJOURS mettre cette ligne EN PREMIER dans le <head>.
+    -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+        viewport :
+        Indispensable pour le responsive (affichage sur mobile).
+        width=device-width  → la largeur de la page = largeur de l'écran.
+        initial-scale=1.0   → pas de zoom automatique au chargement.
+        Sans cette ligne, un mobile affiche la page en version desktop
+        réduite et illisible.
+    -->
+
+    <title>Feuille de route Front-End — Exercice clone une page de ton choix en html/css/js</title>
+    <!--
+        <title> :
+        Texte affiché dans l'onglet du navigateur.
+        Aussi utilisé par Google pour le référencement (SEO).
+        WCAG 2.4.2 exige que chaque page ait un titre descriptif.
+    -->
+
+    <meta name="description" content="Bienvenue sur la page Feuille de route Front-End — Exercice clone une page de ton choix en html/css/js, cette page est un exercice">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--
+        preconnect :
+        Demande au navigateur d'ouvrir la connexion vers Google Fonts
+        EN AVANCE, avant même de charger la police.
+        Gain de performance : 100–300ms économisés.
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap">
+    <!--
+        Google Fonts — Lexend :
+        Police scientifiquement conçue pour réduire la charge cognitive.
+        Recommandée pour les personnes dyslexiques.
+        On charge les graisses 400 (normale), 600 (semi-gras), 700 (gras).
+        display=swap → le texte s'affiche d'abord avec la police système,
+        puis Lexend prend le relais quand elle est téléchargée.
+        Évite un texte invisible pendant le chargement (FOIT).
+    -->
 
 </head>
 
