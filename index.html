@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+  ║        FEUILLE DE ROUTE FRONT-END — Deviens développeur web  ║
+  ║  Fichier unique HTML/CSS/JS — aucune dépendance externe     ║
+  ║  Accessible WCAG 2.1 AA / RGAA 4.1                          ║
+  ╠══════════════════════════════════════════════════════════════╣
+  ║  STRUCTURE DU FICHIER :                                      ║
+  ║  1. <html>        → attributs de thème et de police         ║
+  ║  2. <head>        → méta, police Google, styles inline      ║
+  ║     └─ <style>                                              ║
+  ║         ├─ Reset                                            ║
+  ║         ├─ Variables CSS (thème clair)                      ║
+  ║         ├─ Thème sombre  [data-theme="dark"]                ║
+  ║         ├─ Police dyslexique [data-font="dyslexic"]         ║
+  ║         ├─ Base (body, focus, skip-link)                    ║
+  ║         ├─ Navbar                                           ║
+  ║         ├─ Page (container, titre, sous-titre)              ║
+  ║         ├─ Sections (en-têtes, légende)                     ║
+  ║         ├─ Grille et Cartes                                 ║
+  ║         ├─ Modale                                           ║
+  ║         ├─ Animations (@keyframes)                          ║
+  ║         ├─ Footer                                           ║
+  ║         └─ Responsive (media queries)                       ║
+  ║  3. <body>                                                  ║
+  ║     ├─ Skip link (accessibilité clavier)                    ║
+  ║     ├─ <header> Navbar                                      ║
+  ║     ├─ <main>   Contenu (cartes Obligatoires + Optionnels)   ║
+  ║     ├─ <footer>                                             ║
+  ║     ├─ Modale (#modal)                                      ║
+  ║     └─ <script> JS inline                                   ║
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+
+<!--
+  <html lang="fr"> :
+    Obligatoire pour l'accessibilité (WCAG 3.1.1 / RGAA 8.3).
+    Les lecteurs d'écran utilisent cette valeur pour choisir
+    la bonne voix de synthèse.
+
+  data-theme="light" :
+    Attribut personnalisé (data-*) sur la balise racine.
+    Le CSS cible [data-theme="dark"] pour appliquer le thème sombre.
+    Le JS le lit et le modifie au clic du bouton 🌙.
+
+  data-font="normal" :
+    Même principe pour la police dyslexique.
+    Le CSS cible [data-font="dyslexic"] pour changer la police.
+-->
+<html lang="fr" data-theme="light" data-font="normal">
+
+<head>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
